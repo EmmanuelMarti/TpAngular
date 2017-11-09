@@ -1,0 +1,28 @@
+<p>
+  add-contact works!
+</p>
+<section class="sample-app-content">
+	<h1>Model-based Form Example:</h1>
+	<form [formGroup]="form" (ngSubmit)="onSubmit()">
+		<p>
+			<label>Prénom:</label>
+			<input type="text" formControlName="name">
+		</p>
+		<p>
+			<label>Pseudo :</label>
+			<input type="text" formControlName="pseudo">
+		</p>
+		<p>
+			<label >Email :</label>
+			<input type="email" formControlName="mail">
+		</p>
+		<p>
+			<label >Téléphone :</label>
+			<input type="text" formControlName="tel">
+		</p>
+		<p>
+		<button type="submit" [disabled]="!form.valid"> Submit </button>
+		</p>
+	</form>
+</section>
+<a routerLink="">Retour sur la page d'accueil</a>

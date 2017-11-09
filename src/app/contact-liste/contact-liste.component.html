@@ -1,0 +1,8 @@
+<h3>Je suis la page de contact</h3>
+<br />
+
+<ul>
+	<app-one-contact *ngFor="let personne of contactListe" [personne]="personne" (onSelected)="onSelectedContact($event)"></app-one-contact>
+</ul>
+<a routerLink="/contact/add">Ajouter une personne</a>
+<!-- <div class="modal-backdrop" aria-hidden="true"></div> -->
