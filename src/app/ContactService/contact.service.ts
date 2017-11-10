@@ -45,4 +45,23 @@ export class ContactService {
 		data.id = this.data.length + 1
 		this.data.push(data);
 	}
+
+	update(data){
+		// Le but est de récupérer l'objet que l'on souhaite modifier
+		console.log("data",data);
+		let res = this.data.find( x => { return x.id == data.id });
+		console.log("res",res);
+
+		// On boucle sur les clés afin de les modifier dans l'objet que l'on souhaite changer
+		for(let key in data){
+			res[key] = data[key];
+		}
+
+		
+	}
+
+	delete(data){
+		let res = this.data.find( x => { return x.id == data.id });
+		this.data.splice(this.data.indexOf(res),1);
+	}
 }

@@ -22,6 +22,7 @@ export class ContactDetailComponent implements OnInit {
   ngOnInit() {
   	let id = this.route.snapshot.params['id'];
   	this.contact = this.contactService.getOne(id);
-  	console.log(this.contactService.getOne(id));
+  	//console.log(this.contactService.getOne(id));
+  	console.log(this.contact);
   }
 }

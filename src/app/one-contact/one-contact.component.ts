@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
+import { ContactService } from '../ContactService/contact.service';
 
 @Component({
   selector: 'app-one-contact',
@@ -10,7 +11,7 @@ export class OneContactComponent implements OnInit {
 	data: any;
 	@Input() personne;
 	@Output() onSelected = new EventEmitter<boolean>();
- 	constructor() { }
+ 	constructor(public contactService: ContactService) { }
 
   	ngOnInit() {
   	}
@@ -23,4 +24,9 @@ export class OneContactComponent implements OnInit {
   		};
   		this.onSelected.emit(this.data);
   	}
+
+    DeleteContact(){
+      console.log(this.personne);
+      this.contactService.delete(this.personne);
+    }
 }

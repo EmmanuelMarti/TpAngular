@@ -9,12 +9,15 @@ import { ContactDetailComponent } from './contact-detail/contact-detail.componen
 import { ContactService } from './ContactService/contact.service';
 import { AddContactComponent } from './add-contact/add-contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModifyContactComponent } from './modify-contact/modify-contact.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: ContactListeComponent },
   { path: 'contact/add', component: AddContactComponent},
   { path: 'contact/:id', component: ContactDetailComponent },
+  { path: 'contact/:id/modify', component: ModifyContactComponent},
+
   
 ];
 
@@ -24,7 +27,8 @@ const appRoutes: Routes = [
     ContactListeComponent,
     OneContactComponent,
     ContactDetailComponent,
-    AddContactComponent
+    AddContactComponent,
+    ModifyContactComponent
   ],
   imports: [
     BrowserModule,
